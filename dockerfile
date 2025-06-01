@@ -49,11 +49,6 @@ RUN sed -i "/import RFB/a \\
       var wa = new WebAudio(new_uri); \\
       document.addEventListener('keydown', e => { wa.start(); });" /usr/share/novnc/app/ui.js
 
-# Download and install VirtualGL and TurboVNC
-RUN wget https://gigenet.dl.sourceforge.net/project/virtualgl/3.1/virtualgl_3.1_amd64.deb && \
-    wget https://zenlayer.dl.sourceforge.net/project/turbovnc/3.0.3/turbovnc_3.0.3_amd64.deb && \
-    dpkg -i virtualgl_3.1_amd64.deb turbovnc_3.0.3_amd64.deb && \
-    rm virtualgl_3.1_amd64.deb turbovnc_3.0.3_amd64.deb
 
 # Setup VNC password and config files
 RUN mkdir -p ~/.vnc ~/.dosbox && \
